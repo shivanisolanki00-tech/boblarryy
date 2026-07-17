@@ -4,13 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Story of Bob ❤️</title>
+<title>Story of Bob ✨</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
@@ -18,53 +17,55 @@
 <body>
 
 
-<div class="stars"></div>
+<!-- =========================
+     GALAXY BACKGROUND
+========================= -->
+
+<div id="stars"></div>
+
+<div id="shooting-stars"></div>
 
 
-<div class="floating-hearts">
 
-<span>❤️</span>
-<span>✨</span>
-<span>💗</span>
-<span>⭐</span>
-<span>🌙</span>
+
+
+<!-- =========================
+     OPENING UNIVERSE
+========================= -->
+
+
+<section id="opening" class="screen">
+
+
+<div class="constellation">
+
+<span>✦</span>
+<span>★</span>
+<span>✧</span>
+<span>☆</span>
+<span>✦</span>
 
 </div>
 
 
 
-
-<!-- OPENING -->
-
-<section class="hero">
-
-
-<p class="subtitle">
-A little universe created for
-</p>
-
-
-<h1>
+<h1 id="main-title">
 BOB ✨
 </h1>
 
 
-<h2>
-Happy Birthday Priyal Trivedi ❤️
-</h2>
+<p id="opening-text">
 
+A universe created for someone who makes ordinary moments extraordinary.
 
-<p>
-One year of friendship.
-<br>
-Infinite memories.
-<br>
-Endless adventures ahead.
 </p>
 
 
-<button onclick="startJourney()">
-Begin Our Story 🌙
+
+<button onclick="enterUniverse()">
+
+Enter Bob's Universe 🌌
+
 </button>
 
 
@@ -75,38 +76,70 @@ Begin Our Story 🌙
 
 
 
-<!-- STORY -->
 
-<section id="story" class="hidden">
-
-
-<h1>
-The Bob Effect 💌
-</h1>
+<!-- =========================
+     GALAXY MAP
+========================= -->
 
 
-<div class="glass-card">
+<section id="galaxy-map" class="hidden screen">
 
-<p>
 
-Some people enter your life quietly...
+<h2>
+Explore Bob's Universe ⭐
+</h2>
 
-<br><br>
 
-Then suddenly they become the person you want to share every little thing with.
+<div class="planet-map">
 
-<br><br>
 
-The random conversations,
-the laughter,
-the comfort,
-the silly moments...
+<div class="planet" onclick="openChapter('bob-effect')">
+💌
+<br>
+The Bob Effect
+</div>
 
-<br><br>
 
-That is the magic of Bob ❤️
 
-</p>
+<div class="planet" onclick="openChapter('bob-wins')">
+🌧️
+<br>
+Her Strength
+</div>
+
+
+
+<div class="planet" onclick="openChapter('memory-galaxy')">
+📸
+<br>
+Memory Galaxy
+</div>
+
+
+
+<div class="planet" onclick="openChapter('distance')">
+📱
+<br>
+Distance Portal
+</div>
+
+
+
+<div class="planet" onclick="openChapter('letters')">
+💌
+<br>
+Letters Vault
+</div>
+
+
+
+<div class="planet" onclick="openChapter('future')">
+🌍
+<br>
+Future Universe
+</div>
+
+
 
 </div>
 
@@ -119,37 +152,102 @@ That is the magic of Bob ❤️
 
 
 
-<!-- MEMORY GALAXY -->
 
-<section id="memory" class="hidden">
+<!-- =========================
+     THE BOB EFFECT
+========================= -->
+
+
+<section id="bob-effect" class="chapter hidden">
 
 
 <h1>
+The Bob Effect ❤️
+</h1>
+
+
+<p id="bob-intro">
+
+</p>
+
+
+<div id="qualities-container" class="card-grid">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+     BOB'S STRENGTH
+========================= -->
+
+
+<section id="bob-wins" class="chapter hidden">
+
+
+<h1>
+
+Things Bob Thought She Could Never Survive...
+
+</h1>
+
+
+<p>
+
+And then she proved herself wrong ✨
+
+</p>
+
+
+
+<div id="wins-container" class="card-grid">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+     MEMORY GALAXY
+========================= -->
+
+
+<section id="memory-galaxy" class="chapter hidden">
+
+
+<h1>
+
 Memory Galaxy 📸✨
+
 </h1>
 
 
 <p>
-A galaxy of moments waiting to be filled with our favourite memories.
+
+Ten stars.
+Ten memories.
+A universe of moments.
+
 </p>
 
 
-<div class="polaroids">
-
-
-<div class="photo">
-Add Photo 1 💗
-</div>
-
-
-<div class="photo">
-Add Photo 2 ✨
-</div>
-
-
-<div class="photo">
-Add Photo 3 🌙
-</div>
+<div id="memory-container" class="photo-galaxy">
 
 
 </div>
@@ -163,32 +261,143 @@ Add Photo 3 🌙
 
 
 
-<!-- LETTERS -->
 
-<section id="letters" class="hidden">
+<!-- =========================
+     LONG DISTANCE
+========================= -->
+
+
+<section id="distance" class="chapter hidden">
 
 
 <h1>
-Open When... 💌
+
+Different Cities.
+Same Universe. 📱✨
+
 </h1>
 
 
-<div class="envelopes">
+<p>
+
+A distance portal filled with moments where miles never mattered.
+
+</p>
 
 
-<div>
-Open when you miss me ❤️
+
+<div id="distance-container" class="photo-galaxy">
+
+
 </div>
 
 
-<div>
-Open when you need a smile ✨
+</section>
+<!-- =========================
+     OPEN WHEN VAULT
+========================= -->
+
+
+<section id="letters" class="chapter hidden">
+
+
+<h1>
+Open When Vault 💌
+</h1>
+
+
+<p>
+
+Little reminders for different moments.
+
+</p>
+
+
+
+<div id="letters-container" class="card-grid">
+
 </div>
 
 
-<div>
-Open when life feels difficult 🌸
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+     BOB MUSEUM
+========================= -->
+
+
+<section id="museum" class="chapter hidden">
+
+
+<h1>
+The Bob Museum 🏛️✨
+</h1>
+
+
+<p>
+
+A collection of everything that makes Bob rare.
+
+</p>
+
+
+
+<div class="museum-grid">
+
+
+<div class="exhibit">
+
+🏆
+
+<h3>
+The Kind Heart Award
+</h3>
+
+<p>
+For always caring deeply.
+</p>
+
 </div>
+
+
+
+<div class="exhibit">
+
+💎
+
+<h3>
+Rare Friend Energy
+</h3>
+
+<p>
+A person who is impossible to replace.
+</p>
+
+</div>
+
+
+
+<div class="exhibit">
+
+😂
+
+<h3>
+The Laughter Collection
+</h3>
+
+<p>
+Memories that make no sense to anyone else.
+</p>
+
+</div>
+
 
 
 </div>
@@ -202,13 +411,122 @@ Open when life feels difficult 🌸
 
 
 
-<!-- BIRTHDAY -->
 
-<section id="birthday" class="hidden birthday">
+<!-- =========================
+     GROWTH GARDEN
+========================= -->
+
+
+<section id="garden" class="chapter hidden">
 
 
 <h1>
-Make a Wish Bob 🎂
+Bob's Growth Garden 🌸
+</h1>
+
+
+<p>
+
+Every flower represents something beautiful inside her.
+
+</p>
+
+
+
+<div class="garden">
+
+
+<div class="flower">
+🌸
+<br>
+Kindness
+</div>
+
+
+<div class="flower">
+🌺
+<br>
+Strength
+</div>
+
+
+<div class="flower">
+🌷
+<br>
+Dreams
+</div>
+
+
+<div class="flower">
+🌹
+<br>
+Courage
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     FUTURE UNIVERSE
+========================= -->
+
+
+<section id="future" class="chapter hidden">
+
+
+<h1>
+Future Universe 🌍✨
+</h1>
+
+
+<p>
+
+The memories that are still waiting to happen.
+
+</p>
+
+
+
+<div id="future-container" class="card-grid">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     FINAL BIRTHDAY
+========================= -->
+
+
+<section id="birthday" class="chapter hidden">
+
+
+<h1>
+
+Happy Birthday Bob 🎂❤️
+
 </h1>
 
 
@@ -216,13 +534,24 @@ Make a Wish Bob 🎂
 <div class="cake">
 
 
-<div class="flame"></div>
+<div class="flame">
 
-<div class="candle"></div>
+</div>
 
-<div class="cake-top"></div>
 
-<div class="cake-body"></div>
+<div class="candle">
+
+</div>
+
+
+<div class="cake-top">
+
+</div>
+
+
+<div class="cake-body">
+
+</div>
 
 
 </div>
@@ -230,7 +559,9 @@ Make a Wish Bob 🎂
 
 
 <button onclick="blowCandle()">
-Blow the Candle ✨
+
+Make a Wish ✨
+
 </button>
 
 
@@ -239,24 +570,17 @@ Blow the Candle ✨
 
 
 
-<p>
-
-Dear Priyal,
-
-<br><br>
-
-Thank you for being such a beautiful part of my life.
-
-<br><br>
-
-May your days always be filled with happiness,
-love, success and countless reasons to smile.
-
-<br><br>
-
-Happy Birthday Bob ❤️
+<p id="final-message">
 
 </p>
+
+
+
+<h2>
+
+Created with love ❤️
+
+</h2>
 
 
 </section>
@@ -265,9 +589,15 @@ Happy Birthday Bob ❤️
 
 
 
+
+
+
+<script src="content.js"></script>
+
 <script src="script.js"></script>
 
 
 </body>
+
 
 </html>
