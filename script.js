@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
 
-/* =========================
+let currentLoveMessage=0;
+
+
+/* =====================
 ENTER UNIVERSE
-========================= */
+===================== */
 
 
 window.enterUniverse=function(){
@@ -25,12 +28,19 @@ document
 
 
 
-/* =========================
+
+/* =====================
 OPEN CHAPTER
-========================= */
+===================== */
 
 
 window.openChapter=function(id){
+
+
+document
+.getElementById("galaxy-map")
+.classList.add("hidden");
+
 
 
 document
@@ -42,14 +52,16 @@ section.classList.add("hidden");
 });
 
 
-let section=document.getElementById(id);
+
+let chapter=document.getElementById(id);
 
 
-if(section){
+if(chapter){
 
-section.classList.remove("hidden");
+chapter.classList.remove("hidden");
 
-section.classList.add("show");
+chapter.classList.add("show");
+
 
 window.scrollTo({
 
@@ -70,15 +82,60 @@ behavior:"smooth"
 
 
 
-/* =========================
+
+/* =====================
+BACK TO GALAXY
+===================== */
+
+
+window.backGalaxy=function(){
+
+
+document
+.querySelectorAll(".chapter")
+.forEach(section=>{
+
+section.classList.add("hidden");
+
+});
+
+
+
+document
+.getElementById("galaxy-map")
+.classList.remove("hidden");
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+};
+
+
+
+
+
+
+
+
+
+
+/* =====================
 BOB EFFECT
-========================= */
+===================== */
 
 
 let qualities=
 document.getElementById(
 "qualities-container"
 );
+
 
 
 if(qualities){
@@ -90,22 +147,22 @@ bobContent.bobEffect.intro;
 
 
 
-bobContent.bobEffect.qualities.forEach(q=>{
+bobContent.bobEffect.qualities.forEach(item=>{
 
 
-let card=document.createElement("div");
+let div=document.createElement("div");
 
 
-card.innerHTML=`
+div.innerHTML=`
 
-<h3>${q.title}</h3>
+<h3>${item.title}</h3>
 
-<p>${q.text}</p>
+<p>${item.text}</p>
 
 `;
 
 
-qualities.appendChild(card);
+qualities.appendChild(div);
 
 
 });
@@ -120,9 +177,10 @@ qualities.appendChild(card);
 
 
 
-/* =========================
+
+/* =====================
 BOB WINS
-========================= */
+===================== */
 
 
 let wins=
@@ -138,10 +196,10 @@ if(wins){
 bobContent.bobWins.forEach(item=>{
 
 
-let card=document.createElement("div");
+let div=document.createElement("div");
 
 
-card.innerHTML=`
+div.innerHTML=`
 
 <h3>${item.title}</h3>
 
@@ -150,7 +208,7 @@ card.innerHTML=`
 `;
 
 
-wins.appendChild(card);
+wins.appendChild(div);
 
 
 });
@@ -165,22 +223,87 @@ wins.appendChild(card);
 
 
 
-/* =========================
+
+/* =====================
+WHY I LOVE YOU
+===================== */
+
+
+let loveBox=
+document.getElementById(
+"love-message"
+);
+
+
+
+if(loveBox){
+
+
+generateLoveMessage();
+
+
+}
+
+
+
+
+
+window.generateLoveMessage=function(){
+
+
+let messages=
+bobContent.whyILoveYou.messages;
+
+
+currentLoveMessage++;
+
+
+if(currentLoveMessage>=messages.length){
+
+currentLoveMessage=0;
+
+}
+
+
+
+let box=
+document.getElementById(
+"love-message"
+);
+
+
+
+box.innerHTML=
+
+messages[currentLoveMessage];
+
+
+};
+
+
+
+
+
+
+
+
+
+/* =====================
 MEMORY GALAXY
-========================= */
+===================== */
 
 
-let memories=
+let memory=
 document.getElementById(
 "memory-container"
 );
 
 
 
-if(memories){
+if(memory){
 
 
-bobContent.memories.forEach(memory=>{
+bobContent.memories.forEach(item=>{
 
 
 let card=document.createElement("div");
@@ -191,18 +314,14 @@ card.className="photo-card";
 
 card.innerHTML=`
 
-<img src="${memory.image}">
+<img src="${item.image}">
 
-<p>
-${memory.caption}
-<br>
-${memory.date}
-</p>
+<p>${item.caption}</p>
 
 `;
 
 
-memories.appendChild(card);
+memory.appendChild(card);
 
 
 });
@@ -217,9 +336,9 @@ memories.appendChild(card);
 
 
 
-/* =========================
+/* =====================
 DISTANCE
-========================= */
+===================== */
 
 
 let distance=
@@ -265,9 +384,9 @@ distance.appendChild(card);
 
 
 
-/* =========================
+/* =====================
 TIME CAPSULE
-========================= */
+===================== */
 
 
 let capsule=
@@ -288,38 +407,32 @@ let card=document.createElement("div");
 
 let today=new Date();
 
-
 let unlock=
-letter.unlockDate
-?
-new Date(letter.unlockDate)
-:
+letter.unlockDate?
+new Date(letter.unlockDate):
 null;
 
 
 
-if(unlock && today < unlock){
-
-
-let diff=
-unlock-today;
+if(unlock && today<unlock){
 
 
 let days=
-Math.floor(
-diff/(1000*60*60*24)
+Math.ceil(
+(unlock-today)/
+(1000*60*60*24)
 );
 
 
 
-card.innerHTML=`
+card.innerHTML=
+
+`
 
 <h3>🔒 ${letter.title}</h3>
 
 <p>
-Locked until:
-<br>
-${letter.unlockDate}
+Locked until ${letter.unlockDate}
 </p>
 
 <p>
@@ -329,29 +442,26 @@ Opens in ${days} days ✨
 `;
 
 
-}
 
+}
 
 else{
 
 
-card.innerHTML=`
+card.innerHTML=
+
+`
 
 <h3>💌 ${letter.title}</h3>
 
-<p>
-${letter.message}
-</p>
+<p>${letter.message}</p>
 
 `;
-
 
 }
 
 
-
 capsule.appendChild(card);
-
 
 
 });
@@ -366,9 +476,10 @@ capsule.appendChild(card);
 
 
 
-/* =========================
+
+/* =====================
 LETTERS
-========================= */
+===================== */
 
 
 let letters=
@@ -381,22 +492,25 @@ document.getElementById(
 if(letters){
 
 
-bobContent.letters.forEach(letter=>{
+bobContent.letters.forEach(item=>{
 
 
-let card=document.createElement("div");
+let div=document.createElement("div");
 
 
-card.innerHTML=`
+div.innerHTML=
 
-<h3>${letter.title}</h3>
+`
 
-<p>${letter.message}</p>
+<h3>${item.title}</h3>
+
+<p>${item.message}</p>
 
 `;
 
 
-letters.appendChild(card);
+
+letters.appendChild(div);
 
 
 });
@@ -411,9 +525,10 @@ letters.appendChild(card);
 
 
 
-/* =========================
+
+/* =====================
 MUSEUM
-========================= */
+===================== */
 
 
 let museum=
@@ -429,10 +544,10 @@ if(museum){
 bobContent.museum.forEach(item=>{
 
 
-let card=document.createElement("div");
+let div=document.createElement("div");
 
 
-card.innerHTML=
+div.innerHTML=
 
 `
 
@@ -443,7 +558,7 @@ card.innerHTML=
 `;
 
 
-museum.appendChild(card);
+museum.appendChild(div);
 
 
 });
@@ -458,9 +573,10 @@ museum.appendChild(card);
 
 
 
-/* =========================
+
+/* =====================
 GARDEN
-========================= */
+===================== */
 
 
 let garden=
@@ -476,16 +592,15 @@ if(garden){
 bobContent.garden.forEach(item=>{
 
 
-let flower=document.createElement("div");
+let div=document.createElement("div");
 
 
-flower.className="flower";
+div.className="flower";
+
+div.innerHTML=item;
 
 
-flower.innerHTML=item;
-
-
-garden.appendChild(flower);
+garden.appendChild(div);
 
 
 });
@@ -500,9 +615,9 @@ garden.appendChild(flower);
 
 
 
-/* =========================
+/* =====================
 FUTURE
-========================= */
+===================== */
 
 
 let future=
@@ -518,13 +633,13 @@ if(future){
 bobContent.future.forEach(item=>{
 
 
-let card=document.createElement("div");
+let div=document.createElement("div");
 
 
-card.innerHTML=item;
+div.innerHTML=item;
 
 
-future.appendChild(card);
+future.appendChild(div);
 
 
 });
@@ -539,22 +654,11 @@ future.appendChild(card);
 
 
 
-/* FINAL MESSAGE */
-
-
-let final=
-document.getElementById(
-"final-message"
-);
-
-
-
-if(final){
-
-final.innerHTML=
+document
+.getElementById("final-message")
+.innerHTML=
 bobContent.finalMessage;
 
-}
 
 
 });
@@ -566,12 +670,13 @@ bobContent.finalMessage;
 
 
 
-/* =========================
-CANDLE + CONFETTI
-========================= */
+
+/* =====================
+CANDLE
+===================== */
 
 
-function blowCandle(){
+window.blowCandle=function(){
 
 
 let flame=
@@ -586,44 +691,43 @@ flame.remove();
 
 
 
-for(let i=0;i<150;i++){
+for(let i=0;i<120;i++){
 
 
-let piece=
-document.createElement("div");
+let piece=document.createElement("div");
 
 
-piece.className=
-"confetti-piece";
+piece.className="confetti-piece";
+
+
+piece.style.position="fixed";
+
+piece.style.top="-20px";
 
 
 piece.style.left=
 Math.random()*100+"vw";
 
 
+piece.style.width="10px";
+
+piece.style.height="15px";
+
+
 piece.style.background=
+
 [
-"#ffffff",
+"#ff9fc7",
 "#ffd166",
-"#ff9acb",
-"#6db6ff",
+"#ffffff",
 "#c77dff"
 
-]
-[
-Math.floor(
-Math.random()*5
-)
-];
+][Math.floor(Math.random()*4)];
 
 
 
-piece.style.animationDuration=
-(
-2+
-Math.random()*3
-)
-+"s";
+piece.style.animation=
+"fall 3s linear";
 
 
 
@@ -635,14 +739,10 @@ setTimeout(()=>{
 
 piece.remove();
 
-},5000);
-
-
-
-}
+},4000);
 
 
 }
 
 
-window.blowCandle=blowCandle;
+};
