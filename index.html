@@ -18,10 +18,7 @@
 
 
 <div id="stars"></div>
-
 <div id="shooting-stars"></div>
-
-
 
 
 
@@ -30,29 +27,28 @@ OPENING
 ===================== -->
 
 
-<section id="opening" class="screen">
+<section id="opening" class="page active">
 
 
-<div class="constellation">
+<div class="stars-text">
 ✦ ★ ✧ BOB ✧ ★ ✦
 </div>
 
 
-<h1 id="main-title">
+<h1 class="main-title">
 BOB
 </h1>
 
 
-<p>
+<p class="tagline">
 Some people enter your life quietly...
+<br>
 and somehow become a universe of their own.
 </p>
 
 
 <button onclick="enterUniverse()">
-
-Enter Bob's Universe 🌌
-
+Enter Bob's Universe ✨
 </button>
 
 
@@ -69,104 +65,152 @@ GALAXY MAP
 ===================== -->
 
 
-<section id="galaxy-map" class="screen hidden">
+<section id="galaxy" class="page">
 
 
 <h1>
-Explore Bob's Universe ✨
+Explore Bob's Universe 🌸
 </h1>
 
 
 
-<div class="planet-map">
+<div class="planet-container">
 
 
+<div class="planet" onclick="openChapter('bob')">
 
-<div class="planet" onclick="openChapter('bob-effect')">
 💌
-<br>
-Bob Effect
+<span>
+The Bob Effect
+</span>
+
 </div>
 
 
-<div class="planet" onclick="openChapter('bob-wins')">
+
+<div class="planet" onclick="openChapter('strength')">
+
 🌧️
-<br>
+<span>
 Her Strength
+</span>
+
 </div>
 
 
 
-<div class="planet" onclick="openChapter('why-love')">
+
+<div class="planet" onclick="openChapter('love')">
+
 💗
-<br>
+<span>
 Why I Love You
+</span>
+
 </div>
 
 
 
-<div class="planet" onclick="openChapter('memory-galaxy')">
+
+
+<div class="planet" onclick="openChapter('memory')">
+
 📸
-<br>
+<span>
 Memory Galaxy
+</span>
+
 </div>
+
 
 
 
 <div class="planet" onclick="openChapter('distance')">
+
 📱
-<br>
+<span>
 Distance Portal
+</span>
+
 </div>
 
 
 
-<div class="planet" onclick="openChapter('time-capsule')">
+
+
+<div class="planet" onclick="openChapter('capsule')">
+
 🔐
-<br>
+<span>
 Time Capsule
+</span>
+
 </div>
+
+
 
 
 
 <div class="planet" onclick="openChapter('letters')">
+
 💌
-<br>
-Letters Vault
+<span>
+Open When
+</span>
+
 </div>
+
+
 
 
 
 <div class="planet" onclick="openChapter('museum')">
+
 🏛
-<br>
-Museum
+<span>
+Bob Museum
+</span>
+
 </div>
+
+
 
 
 
 <div class="planet" onclick="openChapter('garden')">
+
 🌸
-<br>
-Garden
+<span>
+Growth Garden
+</span>
+
 </div>
+
+
 
 
 
 <div class="planet" onclick="openChapter('future')">
+
 🌍
-<br>
-Future
+<span>
+Future Universe
+</span>
+
 </div>
+
+
 
 
 
 <div class="planet" onclick="openChapter('birthday')">
-🎂
-<br>
-Finale
-</div>
 
+🎂
+<span>
+Birthday
+</span>
+
+</div>
 
 
 </div>
@@ -181,21 +225,35 @@ Finale
 
 
 
-<!-- CHAPTER TEMPLATE -->
+
+
+<!-- =====================
+CHAPTERS
+===================== -->
 
 
 
-<section id="bob-effect" class="chapter hidden">
+<section id="bob" class="chapter">
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
+
 
 <h1>
-The Bob Effect ❤️
+The Bob Effect 💌
 </h1>
 
-<p id="bob-intro"></p>
 
-<div id="qualities-container" class="card-grid"></div>
+<p id="bob-text"></p>
+
+
+<div id="bob-cards"
+class="cards">
+
+</div>
+
 
 </section>
 
@@ -205,10 +263,13 @@ The Bob Effect ❤️
 
 
 
-<section id="bob-wins" class="chapter hidden">
+
+<section id="strength" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
@@ -216,7 +277,10 @@ Things Bob Thought She Could Never Survive...
 </h1>
 
 
-<div id="wins-container" class="card-grid"></div>
+<div id="strength-cards"
+class="cards">
+
+</div>
 
 
 </section>
@@ -228,13 +292,14 @@ Things Bob Thought She Could Never Survive...
 
 
 
-<!-- WHY I LOVE YOU -->
+
+<section id="love" class="chapter">
 
 
-<section id="why-love" class="chapter hidden">
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
-
-<button onclick="backGalaxy()">← Back to Galaxy</button>
 
 
 <h1>
@@ -242,20 +307,21 @@ Why I Love You 💗
 </h1>
 
 
+
 <div id="love-message"
-class="love-box">
+class="love-message">
 
 </div>
 
 
-<button onclick="generateLoveMessage()">
 
-Generate Another Reason 💌
+<button onclick="newLoveMessage()">
+
+Give Me Another Reason 💌
 
 </button>
 
 
-
 </section>
 
 
@@ -266,19 +332,21 @@ Generate Another Reason 💌
 
 
 
-<section id="memory-galaxy" class="chapter hidden">
+<section id="memory" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
-Memory Galaxy 📸⭐
+Memory Galaxy ⭐
 </h1>
 
 
-<div id="memory-container"
-class="photo-galaxy">
+<div id="memory-grid"
+class="photo-grid">
 
 </div>
 
@@ -292,19 +360,22 @@ class="photo-galaxy">
 
 
 
-<section id="distance" class="chapter hidden">
+
+<section id="distance" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
-Different Cities. Same Universe 📱
+Different Places. Same Universe 📱
 </h1>
 
 
-<div id="distance-container"
-class="photo-galaxy">
+<div id="distance-grid"
+class="photo-grid">
 
 </div>
 
@@ -318,10 +389,13 @@ class="photo-galaxy">
 
 
 
-<section id="time-capsule" class="chapter hidden">
+
+<section id="capsule" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
@@ -329,8 +403,8 @@ Time Capsule Vault 🔐
 </h1>
 
 
-<div id="capsule-container"
-class="card-grid">
+<div id="capsule-grid"
+class="cards">
 
 </div>
 
@@ -344,19 +418,22 @@ class="card-grid">
 
 
 
-<section id="letters" class="chapter hidden">
+
+<section id="letters" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
-Open When Vault 💌
+Open When Letters 💌
 </h1>
 
 
-<div id="letters-container"
-class="card-grid">
+<div id="letters-grid"
+class="cards">
 
 </div>
 
@@ -370,10 +447,13 @@ class="card-grid">
 
 
 
-<section id="museum" class="chapter hidden">
+
+<section id="museum" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
@@ -381,8 +461,8 @@ The Bob Museum 🏛
 </h1>
 
 
-<div id="museum-container"
-class="card-grid">
+<div id="museum-grid"
+class="cards">
 
 </div>
 
@@ -396,10 +476,13 @@ class="card-grid">
 
 
 
-<section id="garden" class="chapter hidden">
+
+<section id="garden" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
@@ -407,7 +490,7 @@ Bob's Growth Garden 🌸
 </h1>
 
 
-<div id="garden-container"
+<div id="garden-grid"
 class="garden">
 
 </div>
@@ -422,10 +505,13 @@ class="garden">
 
 
 
-<section id="future" class="chapter hidden">
+
+<section id="future" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
@@ -433,8 +519,8 @@ Future Universe 🌍
 </h1>
 
 
-<div id="future-container"
-class="card-grid">
+<div id="future-grid"
+class="cards">
 
 </div>
 
@@ -448,14 +534,17 @@ class="card-grid">
 
 
 
-<section id="birthday" class="chapter hidden">
+
+<section id="birthday" class="chapter">
 
 
-<button onclick="backGalaxy()">← Back to Galaxy</button>
+<button onclick="backGalaxy()">
+← Back to Galaxy
+</button>
 
 
 <h1>
-Happy Birthday Bob 🎂❤️
+Happy Birthday Bob 🎂
 </h1>
 
 
@@ -477,16 +566,16 @@ Happy Birthday Bob 🎂❤️
 
 <button onclick="blowCandle()">
 
-Make A Wish ✨
+Blow The Candle ✨
 
 </button>
 
 
-
-<p id="final-message"></p>
+<div id="final-text"></div>
 
 
 </section>
+
 
 
 
