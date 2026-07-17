@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Story of Bob ✨</title>
+<title>Bob's Universe ✨</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -17,21 +17,14 @@
 <body>
 
 
-<!-- =========================
-     GALAXY BACKGROUND
-========================= -->
-
 <div id="stars"></div>
-
 <div id="shooting-stars"></div>
 
 
 
-
-
-<!-- =========================
-     OPENING UNIVERSE
-========================= -->
+<!-- =====================
+OPENING
+===================== -->
 
 
 <section id="opening" class="screen">
@@ -39,33 +32,24 @@
 
 <div class="constellation">
 
-<span>✦</span>
-<span>★</span>
-<span>✧</span>
-<span>☆</span>
-<span>✦</span>
+⭐ ✦ ✧ ★ ✦ ⭐
 
 </div>
 
 
-
 <h1 id="main-title">
-BOB ✨
+BOB
 </h1>
 
 
-<p id="opening-text">
-
-A universe created for someone who makes ordinary moments extraordinary.
-
+<p>
+Some people enter your life quietly...
+and somehow become a universe of their own.
 </p>
 
 
-
 <button onclick="enterUniverse()">
-
 Enter Bob's Universe 🌌
-
 </button>
 
 
@@ -77,17 +61,17 @@ Enter Bob's Universe 🌌
 
 
 
-<!-- =========================
-     GALAXY MAP
-========================= -->
+<!-- =====================
+GALAXY MAP
+===================== -->
 
 
-<section id="galaxy-map" class="hidden screen">
+<section id="galaxy-map" class="screen hidden">
 
 
-<h2>
+<h1>
 Explore Bob's Universe ⭐
-</h2>
+</h1>
 
 
 <div class="planet-map">
@@ -96,9 +80,8 @@ Explore Bob's Universe ⭐
 <div class="planet" onclick="openChapter('bob-effect')">
 💌
 <br>
-The Bob Effect
+Bob Effect
 </div>
-
 
 
 <div class="planet" onclick="openChapter('bob-wins')">
@@ -108,13 +91,11 @@ Her Strength
 </div>
 
 
-
 <div class="planet" onclick="openChapter('memory-galaxy')">
 📸
 <br>
 Memory Galaxy
 </div>
-
 
 
 <div class="planet" onclick="openChapter('distance')">
@@ -124,6 +105,12 @@ Distance Portal
 </div>
 
 
+<div class="planet" onclick="openChapter('time-capsule')">
+🔐
+<br>
+Time Capsule
+</div>
+
 
 <div class="planet" onclick="openChapter('letters')">
 💌
@@ -132,13 +119,32 @@ Letters Vault
 </div>
 
 
+<div class="planet" onclick="openChapter('museum')">
+🏛
+<br>
+Bob Museum
+</div>
+
+
+<div class="planet" onclick="openChapter('garden')">
+🌸
+<br>
+Growth Garden
+</div>
+
 
 <div class="planet" onclick="openChapter('future')">
 🌍
 <br>
-Future Universe
+Future
 </div>
 
+
+<div class="planet" onclick="openChapter('birthday')">
+🎂
+<br>
+Finale
+</div>
 
 
 </div>
@@ -153,9 +159,9 @@ Future Universe
 
 
 
-<!-- =========================
-     THE BOB EFFECT
-========================= -->
+<!-- =====================
+BOB EFFECT
+===================== -->
 
 
 <section id="bob-effect" class="chapter hidden">
@@ -166,15 +172,10 @@ The Bob Effect ❤️
 </h1>
 
 
-<p id="bob-intro">
-
-</p>
+<p id="bob-intro"></p>
 
 
-<div id="qualities-container" class="card-grid">
-
-
-</div>
+<div id="qualities-container" class="card-grid"></div>
 
 
 </section>
@@ -186,32 +187,25 @@ The Bob Effect ❤️
 
 
 
-<!-- =========================
-     BOB'S STRENGTH
-========================= -->
+<!-- =====================
+BOB WINS
+===================== -->
 
 
 <section id="bob-wins" class="chapter hidden">
 
 
 <h1>
-
 Things Bob Thought She Could Never Survive...
-
 </h1>
 
 
 <p>
-
 And then she proved herself wrong ✨
-
 </p>
 
 
-
-<div id="wins-container" class="card-grid">
-
-</div>
+<div id="wins-container" class="card-grid"></div>
 
 
 </section>
@@ -223,34 +217,20 @@ And then she proved herself wrong ✨
 
 
 
-<!-- =========================
-     MEMORY GALAXY
-========================= -->
+<!-- =====================
+MEMORIES
+===================== -->
 
 
 <section id="memory-galaxy" class="chapter hidden">
 
 
 <h1>
-
-Memory Galaxy 📸✨
-
+Memory Galaxy 📸⭐
 </h1>
 
 
-<p>
-
-Ten stars.
-Ten memories.
-A universe of moments.
-
-</p>
-
-
-<div id="memory-container" class="photo-galaxy">
-
-
-</div>
+<div id="memory-container" class="photo-galaxy"></div>
 
 
 </section>
@@ -262,40 +242,64 @@ A universe of moments.
 
 
 
-<!-- =========================
-     LONG DISTANCE
-========================= -->
+<!-- =====================
+DISTANCE
+===================== -->
 
 
 <section id="distance" class="chapter hidden">
 
 
 <h1>
+Different Cities. Same Universe. 📱
+</h1>
 
-Different Cities.
-Same Universe. 📱✨
 
+<div id="distance-container" class="photo-galaxy"></div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================
+TIME CAPSULE
+===================== -->
+
+
+<section id="time-capsule" class="chapter hidden">
+
+
+<h1>
+The Time Capsule Vault 🔐
 </h1>
 
 
 <p>
-
-A distance portal filled with moments where miles never mattered.
-
+Some letters are meant to wait for the right moment.
 </p>
 
 
-
-<div id="distance-container" class="photo-galaxy">
-
-
-</div>
+<div id="capsule-container" class="card-grid"></div>
 
 
 </section>
-<!-- =========================
-     OPEN WHEN VAULT
-========================= -->
+
+
+
+
+
+
+
+
+<!-- =====================
+OPEN WHEN
+===================== -->
 
 
 <section id="letters" class="chapter hidden">
@@ -306,17 +310,7 @@ Open When Vault 💌
 </h1>
 
 
-<p>
-
-Little reminders for different moments.
-
-</p>
-
-
-
-<div id="letters-container" class="card-grid">
-
-</div>
+<div id="letters-container" class="card-grid"></div>
 
 
 </section>
@@ -328,79 +322,20 @@ Little reminders for different moments.
 
 
 
-<!-- =========================
-     BOB MUSEUM
-========================= -->
+<!-- =====================
+MUSEUM
+===================== -->
 
 
 <section id="museum" class="chapter hidden">
 
 
 <h1>
-The Bob Museum 🏛️✨
+The Bob Museum 🏛✨
 </h1>
 
 
-<p>
-
-A collection of everything that makes Bob rare.
-
-</p>
-
-
-
-<div class="museum-grid">
-
-
-<div class="exhibit">
-
-🏆
-
-<h3>
-The Kind Heart Award
-</h3>
-
-<p>
-For always caring deeply.
-</p>
-
-</div>
-
-
-
-<div class="exhibit">
-
-💎
-
-<h3>
-Rare Friend Energy
-</h3>
-
-<p>
-A person who is impossible to replace.
-</p>
-
-</div>
-
-
-
-<div class="exhibit">
-
-😂
-
-<h3>
-The Laughter Collection
-</h3>
-
-<p>
-Memories that make no sense to anyone else.
-</p>
-
-</div>
-
-
-
-</div>
+<div id="museum-container" class="card-grid"></div>
 
 
 </section>
@@ -412,9 +347,9 @@ Memories that make no sense to anyone else.
 
 
 
-<!-- =========================
-     GROWTH GARDEN
-========================= -->
+<!-- =====================
+GARDEN
+===================== -->
 
 
 <section id="garden" class="chapter hidden">
@@ -425,47 +360,7 @@ Bob's Growth Garden 🌸
 </h1>
 
 
-<p>
-
-Every flower represents something beautiful inside her.
-
-</p>
-
-
-
-<div class="garden">
-
-
-<div class="flower">
-🌸
-<br>
-Kindness
-</div>
-
-
-<div class="flower">
-🌺
-<br>
-Strength
-</div>
-
-
-<div class="flower">
-🌷
-<br>
-Dreams
-</div>
-
-
-<div class="flower">
-🌹
-<br>
-Courage
-</div>
-
-
-</div>
-
+<div id="garden-container" class="garden"></div>
 
 
 </section>
@@ -477,32 +372,20 @@ Courage
 
 
 
-
-<!-- =========================
-     FUTURE UNIVERSE
-========================= -->
+<!-- =====================
+FUTURE
+===================== -->
 
 
 <section id="future" class="chapter hidden">
 
 
 <h1>
-Future Universe 🌍✨
+Future Universe 🌍
 </h1>
 
 
-<p>
-
-The memories that are still waiting to happen.
-
-</p>
-
-
-
-<div id="future-container" class="card-grid">
-
-
-</div>
+<div id="future-container" class="card-grid"></div>
 
 
 </section>
@@ -514,73 +397,43 @@ The memories that are still waiting to happen.
 
 
 
-
-<!-- =========================
-     FINAL BIRTHDAY
-========================= -->
+<!-- =====================
+FINALE
+===================== -->
 
 
 <section id="birthday" class="chapter hidden">
 
 
 <h1>
-
 Happy Birthday Bob 🎂❤️
-
 </h1>
-
 
 
 <div class="cake">
 
 
-<div class="flame">
+<div class="flame"></div>
 
-</div>
+<div class="candle"></div>
 
+<div class="cake-top"></div>
 
-<div class="candle">
-
-</div>
-
-
-<div class="cake-top">
-
-</div>
-
-
-<div class="cake-body">
-
-</div>
+<div class="cake-body"></div>
 
 
 </div>
-
 
 
 <button onclick="blowCandle()">
-
-Make a Wish ✨
-
+Make A Wish ✨
 </button>
-
 
 
 <div id="confetti"></div>
 
 
-
-<p id="final-message">
-
-</p>
-
-
-
-<h2>
-
-Created with love ❤️
-
-</h2>
+<p id="final-message"></p>
 
 
 </section>
@@ -598,6 +451,5 @@ Created with love ❤️
 
 
 </body>
-
 
 </html>
