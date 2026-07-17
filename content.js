@@ -1,33 +1,24 @@
 const bobContent = {
 
 
-/* =========================
-   BASIC DETAILS
-========================= */
+name:"Priyal Trivedi",
 
-name: "Priyal Trivedi",
+nickname:"Bob",
 
-nickname: "Bob",
-
-birthday: "28 July 1998",
+birthday:"28 July 1998",
 
 
 
+/* =====================
+OPENING
+===================== */
 
+opening:{
 
-/* =========================
-   OPENING UNIVERSE
-========================= */
-
-opening: {
-
-title: "BOB ✨",
+title:"BOB ✨",
 
 subtitle:
-"Some people enter your life quietly... and somehow become a universe of their own.",
-
-button:
-"Enter Bob's Universe 🌌"
+"Some people enter your life quietly... and somehow become a universe of their own."
 
 },
 
@@ -36,21 +27,16 @@ button:
 
 
 
-/* =========================
-   THE BOB EFFECT
-========================= */
+/* =====================
+BOB EFFECT
+===================== */
 
 
-bobEffect: {
-
-
-title:
-"The Bob Effect ❤️",
+bobEffect:{
 
 
 intro:
-"Some people are special not because of the big things they do, but because of the way they make people feel.",
-
+"The Bob Effect is the magic of how one person can make ordinary moments feel special.",
 
 
 qualities:[
@@ -58,51 +44,38 @@ qualities:[
 
 {
 title:"Patience 🤍",
-
 text:
-"Add Bob's beautiful patience and the moments where she made people feel heard."
+"Bob has the rare ability to listen, understand and make people feel heard."
 },
 
 
 {
 title:"Thoughtfulness ✨",
-
 text:
-"Add the little things Bob notices and remembers."
+"She notices the smallest details and remembers things that most people miss."
 },
 
 
 {
 title:"Kind Heart 🌸",
-
 text:
-"Add stories about Bob's generosity, kindness and care."
+"Her kindness is not something she performs. It is simply who she is."
 },
 
 
 {
 title:"The Effort She Gives 💌",
-
 text:
-"Add how Bob always shows up and puts effort into friendships."
+"She shows up for people and makes friendships feel valued."
 },
 
 
 {
 title:"Honesty 🌙",
-
 text:
-"Add what makes Bob someone people can trust."
-},
-
-
-{
-title:"Emotional Depth ⭐",
-
-text:
-"Add how deeply Bob feels and cares."
-
+"She is genuine, sincere and someone people can trust."
 }
+
 
 ]
 
@@ -114,56 +87,100 @@ text:
 
 
 
+/* =====================
+WHY I LOVE YOU
+===================== */
 
-/* =========================
-   THINGS BOB SURVIVED
-========================= */
+
+whyILoveYou:{
+
+
+title:
+"Why I Love You 💗",
+
+
+messages:[
+
+
+"I love how you make people feel important without even trying.",
+
+
+"I love that your kindness is your default setting.",
+
+
+"I love how you remember tiny details that everyone else forgets.",
+
+
+"I love how random conversations with you somehow become my favourite memories.",
+
+
+"I love your dramatic reactions because honestly they deserve their own Netflix series 😂.",
+
+
+"I love that your heart has unlimited space for people.",
+
+
+"I love that you give effort even when nobody is watching.",
+
+
+"I love that you can make ordinary days feel special.",
+
+
+"I love your honesty because it makes every bond with you real.",
+
+
+"I love that you are both soft and incredibly strong.",
+
+
+"I love how much you care, even when you pretend you don't.",
+
+
+"I love that being around you feels like finding a safe place."
+
+
+]
+
+},
+
+
+
+
+
+
+
+
+/* =====================
+BOB SURVIVAL
+===================== */
 
 
 bobWins:[
 
 
 {
-
 title:
 "A chapter she thought would break her",
 
 text:
-"Add the story of something Bob thought she couldn't survive."
-
+"Every difficult moment became proof of how strong she really is."
 },
 
 
 {
-
 title:
 "A moment she doubted herself",
 
 text:
-"Add how Bob found strength inside herself."
-
+"She discovered strength that was already inside her."
 },
 
 
 {
-
 title:
 "A challenge that felt impossible",
 
 text:
-"Add the moment Bob proved herself wrong."
-
-},
-
-
-{
-
-title:
-"A dream she was scared to chase",
-
-text:
-"Add how Bob achieved more than she imagined."
-
+"She did things she once thought she couldn't."
 }
 
 
@@ -174,84 +191,23 @@ text:
 
 
 
-
-/* =========================
-   MEMORY GALAXY
-========================= */
+/* =====================
+MEMORIES
+===================== */
 
 
 memories:[
 
-
-{
-image:"images/memories/memory1.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory2.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory3.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory4.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory5.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory6.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory7.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory8.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory9.jpg",
-caption:"Memory caption here",
-date:""
-},
-
-
-{
-image:"images/memories/memory10.jpg",
-caption:"Memory caption here",
-date:""
-}
-
+{image:"images/memories/memory1.jpg",caption:"Memory 1"},
+{image:"images/memories/memory2.jpg",caption:"Memory 2"},
+{image:"images/memories/memory3.jpg",caption:"Memory 3"},
+{image:"images/memories/memory4.jpg",caption:"Memory 4"},
+{image:"images/memories/memory5.jpg",caption:"Memory 5"},
+{image:"images/memories/memory6.jpg",caption:"Memory 6"},
+{image:"images/memories/memory7.jpg",caption:"Memory 7"},
+{image:"images/memories/memory8.jpg",caption:"Memory 8"},
+{image:"images/memories/memory9.jpg",caption:"Memory 9"},
+{image:"images/memories/memory10.jpg",caption:"Memory 10"}
 
 ],
 
@@ -260,33 +216,27 @@ date:""
 
 
 
-
-
-/* =========================
-   DISTANCE PORTAL
-========================= */
+/* =====================
+DISTANCE
+===================== */
 
 
 longDistance:[
 
-
 {
 image:"images/calls/call1.jpg",
-caption:"Distance never stopped our conversations."
+caption:"Different places, same connection."
 },
-
 
 {
 image:"images/calls/call2.jpg",
-caption:"Another memory across cities."
+caption:"Distance never won."
 },
-
 
 {
 image:"images/calls/call3.jpg",
-caption:"Still close, always."
+caption:"Still close ❤️"
 }
-
 
 ],
 
@@ -296,92 +246,32 @@ caption:"Still close, always."
 
 
 
-/* =========================
-   OPEN WHEN VAULT
-========================= */
-
-
-letters:[
-
-
-{
-title:"Open when you miss me 💌",
-message:
-"Your emotional message goes here."
-},
-
-
-{
-title:"Open when you doubt yourself ✨",
-message:
-"Your motivational message goes here."
-},
-
-
-{
-title:"Open when you need a smile 🌸",
-message:
-"Your happy memory goes here."
-}
-
-
-],
-
-
-
-
-
-
-
-/* =========================
-   TIME CAPSULE VAULT
-========================= */
+/* =====================
+TIME CAPSULE
+===================== */
 
 
 timeCapsule:[
 
 
 {
-
-title:
-"Birthday Letter ❤️",
-
-unlockDate:
-"2026-07-28",
-
-message:
-"A special birthday letter hidden until this day."
-
+title:"Birthday Letter ❤️",
+unlockDate:"2026-07-28",
+message:"A special letter waiting for Bob."
 },
 
 
-
 {
-
-title:
-"One Year Later ✨",
-
-unlockDate:
-"2027-07-28",
-
-message:
-"A message from the past waiting for Bob."
-
+title:"One Year Later ✨",
+unlockDate:"2027-07-28",
+message:"A memory from the past."
 },
 
 
-
 {
-
-title:
-"Forever Reminder 🌙",
-
-unlockDate:
-null,
-
-message:
-"A reminder that Bob is loved."
-
+title:"Forever Reminder 🌙",
+unlockDate:null,
+message:"You are loved more than you know."
 }
 
 
@@ -393,87 +283,75 @@ message:
 
 
 
-/* =========================
-   BOB MUSEUM
-========================= */
+
+/* =====================
+OPEN WHEN
+===================== */
+
+
+letters:[
+
+{
+title:"Open when you miss me 💌",
+message:"A reminder that some bonds don't need distance to survive."
+},
+
+
+{
+title:"Open when you doubt yourself ✨",
+message:"Remember everything you have already overcome."
+},
+
+
+{
+title:"Open when you need a smile 🌸",
+message:"Remember all the ridiculous moments that made us laugh."
+}
+
+],
+
+
+
+
 
 
 museum:[
 
-
 {
 title:"Kind Heart Award 🏆",
-
-text:
-"For caring more than anyone notices."
+text:"For making people feel cared for."
 },
-
 
 {
 title:"Rare Friend Certificate 💎",
-
-text:
-"For being impossible to replace."
-},
-
-
-{
-title:"Professional Laugh Creator 😂",
-
-text:
-"For creating memories out of ordinary moments."
+text:"Because people like you are not easy to find."
 }
-
 
 ],
 
 
 
 
-
-
-
-/* =========================
-   GROWTH GARDEN
-========================= */
 
 
 garden:[
 
-
 "Kindness 🌸",
-
 "Strength 🌹",
-
 "Courage 🌺",
-
 "Dreams 🌷"
-
 
 ],
 
 
 
-
-
-
-
-/* =========================
-   FUTURE UNIVERSE
-========================= */
 
 
 future:[
 
-
 "Places we still have to explore ✈️",
-
-"Photos we still have to take 📸",
-
-"Stories we still have to create 🌍",
-
-"Memories waiting for us ⭐"
-
+"Memories still waiting to happen 📸",
+"Stories we haven't created yet 🌍"
 
 ],
 
@@ -482,16 +360,7 @@ future:[
 
 
 
-
-/* =========================
-   FINAL MESSAGE
-========================= */
-
-
 finalMessage:
-
-"Happy Birthday Bob ❤️ Replace this with your personal letter later."
-
-
+"Happy Birthday Bob ❤️"
 
 };
