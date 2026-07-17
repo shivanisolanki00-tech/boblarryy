@@ -1,5 +1,1 @@
-function startStory(){
-
-window.location.href="chapter1.html";
-
-}
+// Story navigation handled through HTML links
