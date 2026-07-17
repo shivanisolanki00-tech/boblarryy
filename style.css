@@ -575,3 +575,36 @@ font-size:18px;
 
 
 }
+
+.confetti-piece{
+
+position:fixed;
+
+width:12px;
+
+height:18px;
+
+z-index:9999;
+
+border-radius:3px;
+
+animation:confettiFall linear forwards;
+
+}
+
+
+@keyframes confettiFall{
+
+from{
+
+transform:translateY(0) rotate(0deg);
+
+}
+
+to{
+
+transform:translateY(100vh) rotate(720deg);
+
+}
+
+}
