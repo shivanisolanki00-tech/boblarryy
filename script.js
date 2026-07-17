@@ -2,17 +2,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 /* =========================
-OPEN UNIVERSE
+ENTER UNIVERSE
 ========================= */
 
 
 window.enterUniverse=function(){
 
-document.getElementById("opening")
+document
+.getElementById("opening")
 .classList.add("hidden");
 
 
-document.getElementById("galaxy-map")
+document
+.getElementById("galaxy-map")
 .classList.remove("hidden");
 
 
@@ -22,15 +24,17 @@ document.getElementById("galaxy-map")
 
 
 
+
 /* =========================
-CHAPTER OPENING
+OPEN CHAPTER
 ========================= */
 
 
 window.openChapter=function(id){
 
 
-document.querySelectorAll(".chapter")
+document
+.querySelectorAll(".chapter")
 .forEach(section=>{
 
 section.classList.add("hidden");
@@ -38,24 +42,24 @@ section.classList.add("hidden");
 });
 
 
-let chapter=document.getElementById(id);
+let section=document.getElementById(id);
 
 
-if(chapter){
+if(section){
 
-chapter.classList.remove("hidden");
+section.classList.remove("hidden");
 
-chapter.classList.add("show");
+section.classList.add("show");
 
+window.scrollTo({
 
-chapter.scrollIntoView({
+top:0,
 
 behavior:"smooth"
 
 });
 
 }
-
 
 
 };
@@ -71,35 +75,13 @@ BOB EFFECT
 ========================= */
 
 
-let qualityBox=document.getElementById(
+let qualities=
+document.getElementById(
 "qualities-container"
 );
 
 
-
-if(qualityBox && bobContent){
-
-
-bobContent.bobEffect.qualities.forEach(item=>{
-
-
-let card=document.createElement("div");
-
-
-card.innerHTML=`
-
-<h3>${item.title}</h3>
-
-<p>${item.text}</p>
-
-`;
-
-
-qualityBox.appendChild(card);
-
-
-});
-
+if(qualities){
 
 
 document.getElementById("bob-intro")
@@ -107,8 +89,29 @@ document.getElementById("bob-intro")
 bobContent.bobEffect.intro;
 
 
-}
 
+bobContent.bobEffect.qualities.forEach(q=>{
+
+
+let card=document.createElement("div");
+
+
+card.innerHTML=`
+
+<h3>${q.title}</h3>
+
+<p>${q.text}</p>
+
+`;
+
+
+qualities.appendChild(card);
+
+
+});
+
+
+}
 
 
 
@@ -122,9 +125,11 @@ BOB WINS
 ========================= */
 
 
-let wins=document.getElementById(
+let wins=
+document.getElementById(
 "wins-container"
 );
+
 
 
 if(wins){
@@ -160,20 +165,19 @@ wins.appendChild(card);
 
 
 
-
-
 /* =========================
 MEMORY GALAXY
 ========================= */
 
 
-let memoryBox=document.getElementById(
+let memories=
+document.getElementById(
 "memory-container"
 );
 
 
 
-if(memoryBox){
+if(memories){
 
 
 bobContent.memories.forEach(memory=>{
@@ -189,13 +193,16 @@ card.innerHTML=`
 
 <img src="${memory.image}">
 
-
-<p>${memory.caption}</p>
+<p>
+${memory.caption}
+<br>
+${memory.date}
+</p>
 
 `;
 
 
-memoryBox.appendChild(card);
+memories.appendChild(card);
 
 
 });
@@ -210,19 +217,19 @@ memoryBox.appendChild(card);
 
 
 
-
 /* =========================
-DISTANCE PORTAL
+DISTANCE
 ========================= */
 
 
-let distanceBox=document.getElementById(
+let distance=
+document.getElementById(
 "distance-container"
 );
 
 
 
-if(distanceBox){
+if(distance){
 
 
 bobContent.longDistance.forEach(item=>{
@@ -243,7 +250,108 @@ card.innerHTML=`
 `;
 
 
-distanceBox.appendChild(card);
+distance.appendChild(card);
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+TIME CAPSULE
+========================= */
+
+
+let capsule=
+document.getElementById(
+"capsule-container"
+);
+
+
+
+if(capsule){
+
+
+bobContent.timeCapsule.forEach(letter=>{
+
+
+let card=document.createElement("div");
+
+
+let today=new Date();
+
+
+let unlock=
+letter.unlockDate
+?
+new Date(letter.unlockDate)
+:
+null;
+
+
+
+if(unlock && today < unlock){
+
+
+let diff=
+unlock-today;
+
+
+let days=
+Math.floor(
+diff/(1000*60*60*24)
+);
+
+
+
+card.innerHTML=`
+
+<h3>🔒 ${letter.title}</h3>
+
+<p>
+Locked until:
+<br>
+${letter.unlockDate}
+</p>
+
+<p>
+Opens in ${days} days ✨
+</p>
+
+`;
+
+
+}
+
+
+else{
+
+
+card.innerHTML=`
+
+<h3>💌 ${letter.title}</h3>
+
+<p>
+${letter.message}
+</p>
+
+`;
+
+
+}
+
+
+
+capsule.appendChild(card);
+
 
 
 });
@@ -263,7 +371,8 @@ LETTERS
 ========================= */
 
 
-let letters=document.getElementById(
+let letters=
+document.getElementById(
 "letters-container"
 );
 
@@ -303,11 +412,101 @@ letters.appendChild(card);
 
 
 /* =========================
+MUSEUM
+========================= */
+
+
+let museum=
+document.getElementById(
+"museum-container"
+);
+
+
+
+if(museum){
+
+
+bobContent.museum.forEach(item=>{
+
+
+let card=document.createElement("div");
+
+
+card.innerHTML=
+
+`
+
+<h3>${item.title}</h3>
+
+<p>${item.text}</p>
+
+`;
+
+
+museum.appendChild(card);
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+GARDEN
+========================= */
+
+
+let garden=
+document.getElementById(
+"garden-container"
+);
+
+
+
+if(garden){
+
+
+bobContent.garden.forEach(item=>{
+
+
+let flower=document.createElement("div");
+
+
+flower.className="flower";
+
+
+flower.innerHTML=item;
+
+
+garden.appendChild(flower);
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
 FUTURE
 ========================= */
 
 
-let future=document.getElementById(
+let future=
+document.getElementById(
 "future-container"
 );
 
@@ -339,8 +538,26 @@ future.appendChild(card);
 
 
 
-});
 
+/* FINAL MESSAGE */
+
+
+let final=
+document.getElementById(
+"final-message"
+);
+
+
+
+if(final){
+
+final.innerHTML=
+bobContent.finalMessage;
+
+}
+
+
+});
 
 
 
@@ -357,7 +574,8 @@ CANDLE + CONFETTI
 function blowCandle(){
 
 
-let flame=document.querySelector(".flame");
+let flame=
+document.querySelector(".flame");
 
 
 if(flame){
@@ -371,40 +589,51 @@ flame.remove();
 for(let i=0;i<150;i++){
 
 
-let confetti=document.createElement("div");
+let piece=
+document.createElement("div");
 
 
-confetti.className="confetti-piece";
+piece.className=
+"confetti-piece";
 
 
-confetti.style.left=
+piece.style.left=
 Math.random()*100+"vw";
 
 
-confetti.style.background=
+piece.style.background=
 [
-"#ff69b4",
-"#ffd166",
 "#ffffff",
-"#c77dff",
-"#06d6a0"
+"#ffd166",
+"#ff9acb",
+"#6db6ff",
+"#c77dff"
 
-][Math.floor(Math.random()*5)];
+]
+[
+Math.floor(
+Math.random()*5
+)
+];
 
 
 
-confetti.style.animationDuration=
-(2+Math.random()*3)+"s";
+piece.style.animationDuration=
+(
+2+
+Math.random()*3
+)
++"s";
 
 
 
-document.body.appendChild(confetti);
+document.body.appendChild(piece);
 
 
 
 setTimeout(()=>{
 
-confetti.remove();
+piece.remove();
 
 },5000);
 
