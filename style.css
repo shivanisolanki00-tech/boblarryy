@@ -7,10 +7,10 @@ box-sizing:border-box;
 
 body{
 
-font-family:'Poppins',sans-serif;
+font-family: 'Georgia', serif;
 
 background:
-radial-gradient(circle at top,#5b2a75,#080014 75%);
+radial-gradient(circle at top,#1a0b36,#05010d 70%);
 
 color:white;
 
@@ -20,27 +20,34 @@ overflow-x:hidden;
 
 
 
-.stars{
+/* =========================
+   REAL STAR FIELD
+========================= */
+
+
+#stars{
 
 position:fixed;
 
 inset:0;
 
-background-image:
-radial-gradient(white 1px,transparent 1px);
-
-background-size:45px 45px;
-
-opacity:.35;
-
 z-index:-2;
 
-animation:moveStars 25s linear infinite;
+background-image:
+
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='20' y='40' font-size='25' fill='white'%3E✦%3C/text%3E%3Ctext x='120' y='80' font-size='18' fill='white'%3E★%3C/text%3E%3Ctext x='60' y='160' font-size='22' fill='white'%3E✧%3C/text%3E%3C/svg%3E");
+
+background-size:200px 200px;
+
+animation:starsMove 40s linear infinite;
+
+opacity:.7;
 
 }
 
 
-@keyframes moveStars{
+
+@keyframes starsMove{
 
 from{
 
@@ -50,7 +57,7 @@ background-position:0 0;
 
 to{
 
-background-position:300px 500px;
+background-position:500px 500px;
 
 }
 
@@ -59,62 +66,77 @@ background-position:300px 500px;
 
 
 
+/* SHOOTING STARS */
 
-.floating-hearts span{
+
+#shooting-stars::before,
+#shooting-stars::after{
+
+content:"";
 
 position:fixed;
 
-font-size:30px;
+width:120px;
 
-opacity:.7;
+height:2px;
 
-animation:float 8s infinite ease-in-out;
+background:white;
 
-}
+transform:rotate(-45deg);
 
+animation:shoot 6s infinite;
 
-.floating-hearts span:nth-child(1){
-
-left:10%;
-top:80%;
+opacity:0;
 
 }
 
-.floating-hearts span:nth-child(2){
 
-left:80%;
+
+#shooting-stars::before{
+
 top:20%;
 
+left:80%;
+
 }
 
-.floating-hearts span:nth-child(3){
+
+
+#shooting-stars::after{
+
+top:60%;
 
 left:20%;
-top:40%;
 
-}
-
-.floating-hearts span:nth-child(4){
-
-left:70%;
-top:70%;
-
-}
-
-.floating-hearts span:nth-child(5){
-
-left:50%;
-top:10%;
+animation-delay:3s;
 
 }
 
 
 
-@keyframes float{
+@keyframes shoot{
 
-50%{
+0%,80%{
 
-transform:translateY(-60px);
+opacity:0;
+
+transform:translate(0,0) rotate(-45deg);
+
+}
+
+
+85%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:0;
+
+transform:translate(-300px,300px) rotate(-45deg);
 
 }
 
@@ -126,11 +148,11 @@ transform:translateY(-60px);
 
 
 
-section{
+
+.screen,
+.chapter{
 
 min-height:100vh;
-
-padding:50px 25px;
 
 display:flex;
 
@@ -142,59 +164,40 @@ align-items:center;
 
 text-align:center;
 
+padding:50px 20px;
+
 }
 
 
 
-.hero h1{
 
-font-family:'Playfair Display',serif;
+#main-title{
 
 font-size:100px;
 
-letter-spacing:5px;
+letter-spacing:15px;
 
-margin:25px;
-
-text-shadow:0 0 30px rgba(255,255,255,.4);
+animation:glow 3s infinite alternate;
 
 }
 
 
 
-.hero h2{
+@keyframes glow{
 
-font-size:35px;
+from{
 
-margin-bottom:25px;
-
-}
-
-
-
-.subtitle{
-
-font-size:22px;
-
-letter-spacing:3px;
-
-color:#ffd5e8;
+text-shadow:0 0 20px #fff;
 
 }
 
+to{
 
-
-p{
-
-font-size:22px;
-
-line-height:1.8;
-
-max-width:800px;
+text-shadow:0 0 60px #ffb6ff;
 
 }
 
-
+}
 
 
 
@@ -206,23 +209,19 @@ margin-top:40px;
 
 padding:18px 45px;
 
-border:none;
-
 border-radius:50px;
 
-background:white;
+border:none;
 
-color:#55245e;
-
-font-size:20px;
-
-font-weight:600;
+font-size:18px;
 
 cursor:pointer;
 
-transition:.4s;
+background:white;
 
-box-shadow:0 0 35px rgba(255,255,255,.5);
+color:#35104d;
+
+transition:.4s;
 
 }
 
@@ -230,7 +229,9 @@ box-shadow:0 0 35px rgba(255,255,255,.5);
 
 button:hover{
 
-transform:scale(1.12);
+transform:scale(1.1);
+
+box-shadow:0 0 30px white;
 
 }
 
@@ -244,8 +245,6 @@ transform:scale(1.12);
 
 display:none;
 
-opacity:0;
-
 }
 
 
@@ -254,7 +253,7 @@ opacity:0;
 
 display:flex;
 
-animation:appear 1.8s forwards;
+animation:appear 1.5s ease;
 
 }
 
@@ -286,53 +285,38 @@ transform:translateY(0);
 
 
 
-.glass-card{
-
-margin-top:40px;
-
-max-width:750px;
-
-padding:45px;
-
-border-radius:30px;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(15px);
-
-box-shadow:0 0 40px rgba(255,255,255,.15);
-
-}
 
 
+/* GALAXY MAP */
 
 
-
-.polaroids{
+.planet-map{
 
 display:flex;
-
-gap:35px;
-
-margin-top:50px;
 
 flex-wrap:wrap;
 
 justify-content:center;
 
+gap:40px;
+
+margin-top:50px;
+
 }
 
 
 
-.photo{
+.planet{
 
-height:280px;
+width:170px;
 
-width:220px;
+height:170px;
 
-background:white;
+border-radius:50%;
 
-color:#6a356d;
+background:
+
+radial-gradient(circle,#fff,#b86cff,#3b145f);
 
 display:flex;
 
@@ -340,17 +324,123 @@ align-items:center;
 
 justify-content:center;
 
-font-weight:600;
+flex-direction:column;
 
-transform:rotate(-5deg);
+cursor:pointer;
 
-box-shadow:0 20px 40px rgba(0,0,0,.4);
+font-size:20px;
+
+box-shadow:0 0 40px #d9a7ff;
+
+transition:.5s;
 
 }
 
 
 
-.photo:nth-child(2){
+.planet:hover{
+
+transform:scale(1.15);
+
+}
+
+
+
+
+
+
+
+
+/* CARDS */
+
+
+.card-grid{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+
+
+.card-grid div,
+.exhibit{
+
+width:280px;
+
+padding:35px;
+
+background:rgba(255,255,255,.12);
+
+border-radius:25px;
+
+backdrop-filter:blur(15px);
+
+font-size:18px;
+
+transition:.4s;
+
+}
+
+
+
+.card-grid div:hover,
+.exhibit:hover{
+
+transform:translateY(-15px);
+
+}
+
+
+
+
+
+
+
+
+/* PHOTOS */
+
+
+.photo-galaxy{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+
+
+.photo-card{
+
+width:220px;
+
+padding:15px;
+
+background:white;
+
+color:#333;
+
+transform:rotate(-4deg);
+
+}
+
+
+
+.photo-card:nth-child(even){
 
 transform:rotate(5deg);
 
@@ -358,9 +448,21 @@ transform:rotate(5deg);
 
 
 
-.photo:nth-child(3){
+.photo-card img{
 
-transform:rotate(-3deg);
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+
+
+.photo-card p{
+
+padding:15px;
 
 }
 
@@ -370,11 +472,15 @@ transform:rotate(-3deg);
 
 
 
-.envelopes{
+
+/* MUSEUM */
+
+
+.museum-grid{
 
 display:flex;
 
-gap:25px;
+gap:30px;
 
 flex-wrap:wrap;
 
@@ -386,31 +492,50 @@ margin-top:40px;
 
 
 
-.envelopes div{
 
-width:250px;
 
-padding:35px;
+/* GARDEN */
 
-background:rgba(255,255,255,.15);
 
-border-radius:20px;
+.garden{
 
-backdrop-filter:blur(10px);
+display:flex;
 
-font-size:20px;
+gap:50px;
 
-transition:.4s;
+font-size:35px;
+
+margin-top:50px;
+
+}
+
+
+
+.flower{
+
+animation:bloom 3s infinite alternate;
 
 }
 
 
 
-.envelopes div:hover{
+@keyframes bloom{
 
-transform:translateY(-15px) scale(1.05);
+from{
+
+transform:scale(.9);
 
 }
+
+to{
+
+transform:scale(1.1);
+
+}
+
+}
+
+
 
 
 
@@ -419,6 +544,7 @@ transform:translateY(-15px) scale(1.05);
 
 
 /* CAKE */
+
 
 .cake{
 
@@ -432,11 +558,11 @@ position:relative;
 
 .cake-body{
 
-height:100px;
-
 width:220px;
 
-background:#ff9fcf;
+height:100px;
+
+background:#ff8fc7;
 
 border-radius:20px;
 
@@ -446,9 +572,9 @@ border-radius:20px;
 
 .cake-top{
 
-height:35px;
-
 width:240px;
+
+height:35px;
 
 background:white;
 
@@ -456,7 +582,7 @@ border-radius:20px;
 
 position:absolute;
 
-top:-25px;
+top:-20px;
 
 left:-10px;
 
@@ -466,17 +592,17 @@ left:-10px;
 
 .candle{
 
-height:60px;
-
 width:15px;
+
+height:60px;
 
 background:#ffd166;
 
 position:absolute;
 
-top:-85px;
+left:103px;
 
-left:102px;
+top:-80px;
 
 }
 
@@ -484,19 +610,19 @@ left:102px;
 
 .flame{
 
-height:35px;
-
 width:25px;
 
-background:#ff8c00;
+height:35px;
+
+background:orange;
 
 border-radius:50%;
 
 position:absolute;
 
-top:-120px;
-
 left:98px;
+
+top:-115px;
 
 animation:flicker .5s infinite;
 
@@ -508,12 +634,11 @@ animation:flicker .5s infinite;
 
 50%{
 
-transform:scale(.8);
+transform:scale(.7);
 
 }
 
 }
-
 
 
 
@@ -524,11 +649,15 @@ transform:scale(.8);
 
 position:fixed;
 
+top:-20px;
+
 width:12px;
 
 height:20px;
 
 animation:fall 3s linear forwards;
+
+z-index:999;
 
 }
 
@@ -548,62 +677,13 @@ transform:translateY(100vh) rotate(720deg);
 
 
 
-
-
 @media(max-width:600px){
 
-
-.hero h1{
+#main-title{
 
 font-size:55px;
 
-}
-
-
-.hero h2{
-
-font-size:25px;
-
-}
-
-
-p{
-
-font-size:18px;
-
-}
-
-
-}
-
-.confetti-piece{
-
-position:fixed;
-
-width:12px;
-
-height:18px;
-
-z-index:9999;
-
-border-radius:3px;
-
-animation:confettiFall linear forwards;
-
-}
-
-
-@keyframes confettiFall{
-
-from{
-
-transform:translateY(0) rotate(0deg);
-
-}
-
-to{
-
-transform:translateY(100vh) rotate(720deg);
+letter-spacing:8px;
 
 }
 
