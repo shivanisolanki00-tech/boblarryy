@@ -1,7 +1,5 @@
 function startStory(){
 
-alert(
-"Every friendship has a story...\n\nAnd this one is ours ❤️"
-);
+window.location.href="chapter1.html";
 
 }
